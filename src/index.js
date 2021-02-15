@@ -5,6 +5,7 @@ import App from './components/App';
 import configureStore from './configureStore';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const storeConfig = configureStore();
 

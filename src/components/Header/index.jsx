@@ -12,8 +12,9 @@ export const customPropTypes = {
 const Header = ({
   postText,
 }) => (
-  <div className={styles.header} data-test="headerComponent">
-    Header
+  <div className={`row justify-content-center ${styles.header}`} data-test="headerComponent">
+    <div className={`col-6 ${styles.test}`}/>
+    <div className={`col-1 ${styles.test2}`}/>
   </div>
 );
 

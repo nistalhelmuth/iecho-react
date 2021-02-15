@@ -1,0 +1,22 @@
+.main {
+  margin-top: 40px;
+}
+.main .test {
+  background-color: white;
+  min-height: 500px;
+
+
+}
+
+.main .test .title {
+  margin-top: 40px;
+}
+
+.main .test .test2 {
+}
+
+.test3 {
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}

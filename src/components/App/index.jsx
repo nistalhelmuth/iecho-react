@@ -4,7 +4,7 @@ import Main from '../Main';
 import styles from './app.module.css';
 
 const App = () => (
-  <div className={styles.app} data-test="dataComponent">
+  <div className={`container-fluid ${styles.app}`} data-test="dataComponent">
     <Header />
     <Main />   
   </div>

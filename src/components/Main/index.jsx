@@ -11,8 +11,23 @@ export const customPropTypes = {
 const Main = ({
   postText,
 }) => (
-  <div className={styles.main} data-test="mainComponent">
-    Main
+  <div className={`row justify-content-center ${styles.main}`} data-test="mainComponent">
+    <div className={`col-8 ${styles.test}`}>
+      <h3 className={`col-8 ${styles.title}`}>
+        RESULTS:
+      </h3>
+      <div className={`row justify-content-center ${styles.test2}`}>
+        <div className={`col-7 ${styles.test3}`}>
+          Text 1
+        </div>
+        <div className={`col-7 ${styles.test3}`}>
+          Text 1
+        </div>
+        <div className={`col-7 ${styles.test3}`}>
+          Text 1
+        </div>
+      </div>
+    </div>
   </div>
 );
 

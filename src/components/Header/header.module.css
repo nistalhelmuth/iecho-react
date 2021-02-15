@@ -1,7 +1,12 @@
 .header {
-  background: rgb(6, 50, 152);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  background: red;
   height: 75px;
+}
+
+.test {
+  background: blue;
+}
+
+.test2 {
+  background: green;
 }
