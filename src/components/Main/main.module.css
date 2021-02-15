@@ -4,19 +4,15 @@
 .main .test {
   background-color: white;
   min-height: 500px;
-
-
+  margin-top: 20px;
 }
 
 .main .test .title {
   margin-top: 40px;
 }
 
-.main .test .test2 {
-}
-
 .test3 {
-  margin-top: 10px;
+  margin-top: 10px !important;
   border: 1px solid gray;
   border-radius: 5px;
 }

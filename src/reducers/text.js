@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 import * as textTypes from '../types/text';
 
-const byId = (state={}, action) => {
+const byId = (state={
+  1: {
+    text: "this is the text",
+  }
+}, action) => {
   switch (action.type) {
     case textTypes.TEXT_CREATED: {
       const {
@@ -52,7 +56,7 @@ const byId = (state={}, action) => {
   }
 }
 
-const order = (state=[], action) => {
+const order = (state=[1], action) => {
   switch (action.type) {
     case textTypes.TEXT_CREATED: {
       const {

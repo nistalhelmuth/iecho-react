@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
+import * as selectors from '../../reducers';
 import styles from './main.module.css';
 
 export const customPropTypes = {
@@ -9,7 +10,7 @@ export const customPropTypes = {
 }
 
 const Main = ({
-  postText,
+  textList,
 }) => (
   <div className={`row justify-content-center ${styles.main}`} data-test="mainComponent">
     <div className={`col-8 ${styles.test}`}>
@@ -17,15 +18,23 @@ const Main = ({
         RESULTS:
       </h3>
       <div className={`row justify-content-center ${styles.test2}`}>
-        <div className={`col-7 ${styles.test3}`}>
-          Text 1
-        </div>
-        <div className={`col-7 ${styles.test3}`}>
-          Text 1
-        </div>
-        <div className={`col-7 ${styles.test3}`}>
-          Text 1
-        </div>
+        {
+          textList.length ? (
+            <>
+              {
+                textList.map((text) => (
+                  <div className={`col-7 ${styles.test3}`}>
+                    {text.text}
+                  </div>
+                ))
+              }
+            </>
+          ) : (
+            <h4 className={`col-7`}>
+              No text to show...
+            </h4>
+          )
+        }
       </div>
     </div>
   </div>
@@ -35,7 +44,7 @@ Main.propTypes = customPropTypes;
 
 export default connect(
   (state) => ({
-    textList: [],
+    textList: selectors.getAllText(state),
   }),
   undefined,
 )(Main);
