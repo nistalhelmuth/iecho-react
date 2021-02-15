@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import authReducer, * as fromAuthReducer from './auth';
+import textReducer, * as fromTextReducerfrom from './text';
 
 export default combineReducers({
-  authReducer,
+  textReducer,
 });
 
 //auth
-export const getUserToken = (state) => fromAuthReducer.getUserToken(state.authReducer);
+export const getAllText = (state) => fromTextReducerfrom.getAllText(state.textReducer);

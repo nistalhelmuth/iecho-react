@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import * as userActions from '../../actions/user';
+import * as textActions from '../../actions/text';
 import styles from './header.module.css';
 
 export const customPropTypes = {
@@ -23,8 +23,8 @@ export default connect(
   undefined,
   (dispatch) => ({
     postText(values) {
-      dispatch(userActions.doLogin({
-        text: values.email,
+      dispatch(textActions.registerText({
+        text: values.text,
       }))
     },
   }),

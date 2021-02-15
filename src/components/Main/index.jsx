@@ -11,8 +11,8 @@ export const customPropTypes = {
 const Main = ({
   postText,
 }) => (
-  <div className={styles.header} data-test="mainComponent">
-    Header
+  <div className={styles.main} data-test="mainComponent">
+    Main
   </div>
 );
 

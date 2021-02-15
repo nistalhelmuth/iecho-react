@@ -3,11 +3,11 @@ import {
   takeLatest,
   call,
 } from 'redux-saga/effects';
-import * as userTypes from '../types/user';
-import * as userActions from '../actions/user';
-import * as postApi from '../apis/user';
+import * as textTypes from '../types/text';
+import * as textActions from '../actions/text';
+import * as postApi from '../apis/text';
 
-function* userRegister(action) {
+function* textRegister(action) {
   const {
     payload: {
       text,
@@ -18,11 +18,11 @@ function* userRegister(action) {
       postApi.registerUser,
       text,
     );
-    yield put(userActions.registerUserConfirm({
+    yield put(textActions.registerTextConfirm({
       text: response.text,
     }));
   } catch (message) {
-    yield put(userActions.registerUserDecline({
+    yield put(textActions.registerTextDecline({
       error: message,
     }));
   }
@@ -30,8 +30,8 @@ function* userRegister(action) {
 
 function* LoginSaga() {
   yield takeLatest(
-    userTypes.USER_REGISTERED,
-    userRegister
+    textTypes.TEXT_CREATED,
+    textRegister
   );
 }
 

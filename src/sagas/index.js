@@ -1,9 +1,9 @@
 import { fork, all } from 'redux-saga/effects';
-import UserSaga from './user';
+import TextSaga from './text';
 
 function* mainSaga() {
   yield all([
-    fork(UserSaga),
+    fork(TextSaga),
   ]);
 }
 
