@@ -7,8 +7,11 @@ import ReactLoading from 'react-loading';
 import styles from './main.module.css';
 
 export const customPropTypes = {
-  authorized: PropTypes.bool,
-  doLogin: PropTypes.func.isRequired,
+  textList: PropTypes.arrayOf(PropTypes.shape({
+    loading: PropTypes.bool,
+    palindrome: PropTypes.bool,
+    text: PropTypes.string,
+  })),
 }
 
 const Main = ({
