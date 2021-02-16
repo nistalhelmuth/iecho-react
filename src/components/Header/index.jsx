@@ -6,14 +6,16 @@ import * as textActions from '../../actions/text';
 import styles from './header.module.css';
 
 export const customPropTypes = {
-  authorized: PropTypes.bool,
-  doLogin: PropTypes.func.isRequired,
+  registerText: PropTypes.func.isRequired,
 }
 
 const Header = ({
   registerText,
 }) => (
-  <div className={`row justify-content-center align-items-center ${styles.header}`} data-test="headerComponent">
+  <div
+    className={`row justify-content-center align-items-center ${styles.header}`}
+    data-test="headerComponent"
+  >
     <Formik 
       data-test="unAuthorizedComponent"
       initialValues={{
@@ -25,11 +27,8 @@ const Header = ({
     >
       {({
           values,
-          errors,
-          touched,
           handleChange,
           handleSubmit,
-          handleBlur,
         }) => (
         <form
           className="col-md-12 col-lg-6"
