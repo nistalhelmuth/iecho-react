@@ -37,4 +37,4 @@ This is a example implementation of the React Framework. It is implemented with 
 10. Feel free to try
 
 
-![UI](https://github.com/nistalhelmuth/iecho-react/blob/main/Photo.png "UI")
+![UI](https://github.com/nistalhelmuth/iecho-react/blob/master/Photo.png "UI")
