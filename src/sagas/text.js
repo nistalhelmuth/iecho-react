@@ -2,6 +2,7 @@ import {
   put,
   takeLatest,
   call,
+  delay,
 } from 'redux-saga/effects';
 import * as textTypes from '../types/text';
 import * as textActions from '../actions/text';
@@ -11,8 +12,10 @@ function* textRegister(action) {
   const {
     payload: {
       text,
+      id,
     },
   } = action;
+  yield delay(500);
   try {
     const response = yield call(
       postApi.registerUser,
@@ -20,9 +23,12 @@ function* textRegister(action) {
     );
     yield put(textActions.registerTextConfirm({
       text: response.text,
+      palindrome: response.palindrome,
+      id,
     }));
   } catch (message) {
     yield put(textActions.registerTextDecline({
+      id,
       error: message,
     }));
   }

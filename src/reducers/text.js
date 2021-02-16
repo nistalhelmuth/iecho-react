@@ -1,22 +1,18 @@
 import { combineReducers } from 'redux';
 import * as textTypes from '../types/text';
 
-const byId = (state={
-  1: {
-    text: "this is the text",
-  }
-}, action) => {
+const byId = (state={}, action) => {
   switch (action.type) {
     case textTypes.TEXT_CREATED: {
       const {
         payload: {
           text,
-          randomId,
+          id,
         },
       } = action;
       const textByIdState = {
         ...state,
-        [randomId]: {
+        [id]: {
           text,
           loading: true,
         }
@@ -26,15 +22,17 @@ const byId = (state={
     case textTypes.TEXT_CREATED_SUCCEEDED: {
       const {
         payload: {
-          randomId,
+          id,
           text,
+          palindrome,
         },
       } = action;
       const textByIdState = {
         ...state,
-        [randomId]: {
-          randomId,
+        [id]: {
+          id,
           text,
+          palindrome,
           loading: false,
         }
       }
@@ -43,11 +41,11 @@ const byId = (state={
     case textTypes.TEXT_CREATED_FAILED: {
       const {
         payload: {
-          randomId,
+          id,
         },
       } = action;
       const textByIdState = {...state};
-      delete textByIdState[randomId];
+      delete textByIdState[id];
       return textByIdState;
     }
     default: {
@@ -56,16 +54,16 @@ const byId = (state={
   }
 }
 
-const order = (state=[1], action) => {
+const order = (state=[], action) => {
   switch (action.type) {
     case textTypes.TEXT_CREATED: {
       const {
         payload: {
-          randomId,
+          id,
         },
       } = action;
       const textOrderState = [
-        randomId,
+        id,
         ...state
       ]
       return textOrderState;

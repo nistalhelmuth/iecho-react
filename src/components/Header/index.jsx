@@ -17,7 +17,7 @@ const Header = ({
     <Formik 
       data-test="unAuthorizedComponent"
       initialValues={{
-        content: undefined,
+        text: undefined,
       }}
       onSubmit={(values) => {
         registerText(values);
@@ -37,12 +37,12 @@ const Header = ({
         >
           <div className="row justify-content-center align-items-center">
             <input
-              id="content"
-              name="content"
-              type="content"
+              id="text"
+              name="text"
+              type="text"
               className="col-7"
               onChange={handleChange}
-              value={values.content}
+              value={values.text}
             />
             <button className="col-2" type="submit" >Send</button>
           </div>
