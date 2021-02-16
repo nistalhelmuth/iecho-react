@@ -3,14 +3,10 @@ const CURRENT_URL = 'http://localhost:8000';
 export const registerUser = (
   text,
 ) => new Promise((resolve, reject) => {
-  fetch(`${CURRENT_URL}/users/register/`, {
+  fetch(`${CURRENT_URL}/iecho${text ? `?text=${text}`: ''}`, {
     headers: {
       "Content-type": "application/json"
     },
-    method: 'POST',
-    body: JSON.stringify({
-      text,
-    })
   })
   .then((resultado) =>  {
     if (resultado.ok) {

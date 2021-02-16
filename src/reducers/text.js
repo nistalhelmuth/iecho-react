@@ -7,12 +7,12 @@ const byId = (state={}, action) => {
       const {
         payload: {
           text,
-          randomId,
+          id,
         },
       } = action;
       const textByIdState = {
         ...state,
-        [randomId]: {
+        [id]: {
           text,
           loading: true,
         }
@@ -22,15 +22,17 @@ const byId = (state={}, action) => {
     case textTypes.TEXT_CREATED_SUCCEEDED: {
       const {
         payload: {
-          randomId,
+          id,
           text,
+          palindrome,
         },
       } = action;
       const textByIdState = {
         ...state,
-        [randomId]: {
-          randomId,
+        [id]: {
+          id,
           text,
+          palindrome,
           loading: false,
         }
       }
@@ -39,11 +41,11 @@ const byId = (state={}, action) => {
     case textTypes.TEXT_CREATED_FAILED: {
       const {
         payload: {
-          randomId,
+          id,
         },
       } = action;
       const textByIdState = {...state};
-      delete textByIdState[randomId];
+      delete textByIdState[id];
       return textByIdState;
     }
     default: {
@@ -57,11 +59,11 @@ const order = (state=[], action) => {
     case textTypes.TEXT_CREATED: {
       const {
         payload: {
-          randomId,
+          id,
         },
       } = action;
       const textOrderState = [
-        randomId,
+        id,
         ...state
       ]
       return textOrderState;
