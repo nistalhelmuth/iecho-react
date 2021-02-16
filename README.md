@@ -14,11 +14,11 @@ This is a example implementation of the React Framework. It is implemented with 
 
 2. `apt-get npm`
 
-3. `git clone https://github.com/nistalhelmuth/mywall-react`
+3. `git clone https://github.com/nistalhelmuth/iecho-react`
 
 ## 2. Dependencies Installation
 
-4. Open the project folder in your terminal: `cd mywall-react`
+4. Open the project folder in your terminal: `cd iecho-react`
 
 5. Install node dependencies: `npm install` or `yarn install`
 
